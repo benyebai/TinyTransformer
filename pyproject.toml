@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benyebai-tinytransformer"
+version = "0.1.0"
+description = "A tiny causal transformer built from first principles with MiniNN."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Benjamin Bai" }]
+dependencies = [
+  "benyebai-mininn @ git+https://github.com/benyebai/MiniNN.git@main",
+]
+
+[project.urls]
+Repository = "https://github.com/benyebai/TinyTransformer"
+Issues = "https://github.com/benyebai/TinyTransformer/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.basedpyright]
+venvPath = "."
+venv = ".venv"
+extraPaths = ["src", "../MiniNN/src", "../TensorGrad"]
